@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indice Schede CEPC</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@600;700&family=Manrope:wght@700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--navy:#1A3A5C;--blue:#2E6DA4;--paper:#f0f0ee;--line:#d9d9d4;--soft:#F7F7F5;--ink:#243447;--muted:#6f7c86;--warn:#E8A900}
@@ -12,12 +12,15 @@ body{font-family:'Barlow',sans-serif;background:var(--paper);color:var(--ink);mi
 .shell{min-height:100vh;display:flex;flex-direction:column}
 .hero{background:linear-gradient(135deg,var(--navy),#244d73 60%,var(--blue));color:#fff;padding:22px 24px 24px;border-bottom:5px solid var(--warn)}
 .hero-inner{max-width:1180px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
-.hero-title{display:flex;align-items:center;gap:12px}
+.hero-title{display:flex;align-items:center;gap:20px}
+.hero-heading{display:flex;flex-direction:column;justify-content:center;padding-top:4px}
 .menu-toggle{display:none;width:39px;height:39px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.13);color:#fff;border-radius:7px;padding:0;cursor:pointer;transition:background .16s ease,transform .16s ease}
 .menu-toggle:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
 .menu-toggle svg,.icon-button svg{width:17px;height:17px;display:block;fill:currentColor}
 .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:5px}
 h1{font-family:'Barlow Condensed',sans-serif;font-size:34px;line-height:1;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.hero-logo{width:104px;height:auto;display:block;flex:0 0 104px}
+.brand-logo text,.brand-logo line{font-family:'Manrope',system-ui,sans-serif}
 .count-badge{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.13);border-radius:6px;padding:8px 12px;white-space:nowrap}
 .workspace{width:min(1180px,100%);margin:0 auto;padding:18px 16px 28px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;align-items:start}
 .index-panel{background:#fff;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.12);overflow:hidden;position:sticky;top:16px}
@@ -52,8 +55,8 @@ h1{font-family:'Barlow Condensed',sans-serif;font-size:34px;line-height:1;font-w
 .icon-button{width:40px;height:38px;border:0;color:#fff;background:var(--blue);border-radius:5px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;white-space:nowrap;transition:background .16s ease,transform .16s ease}
 .icon-button:hover{background:var(--navy);transform:translateY(-1px)}
 .icon-button:focus-visible,.menu-toggle:focus-visible{outline:3px solid rgba(232,169,0,.38);outline-offset:2px}
-.frame-wrap{background:#fff;border-radius:0 0 10px 10px;box-shadow:0 2px 12px rgba(0,0,0,.12);padding:14px;min-height:520px}
-iframe{width:100%;height:760px;border:0;background:var(--paper);border-radius:8px;display:block;overflow:hidden}
+.frame-wrap{background:#fff;border-radius:0;box-shadow:0 2px 12px rgba(0,0,0,.12);padding:0;min-height:520px;overflow:hidden}
+iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:block;overflow:hidden}
 .backdrop{display:none}
 .empty{display:none;padding:16px;color:var(--muted);font-size:13px}
 .sheet-list.no-results + .empty{display:block}
@@ -68,11 +71,12 @@ iframe{width:100%;height:760px;border:0;background:var(--paper);border-radius:8p
   body.menu-open .index-panel{transform:translateX(0);visibility:visible;pointer-events:auto}
   .backdrop{display:block;position:fixed;inset:0;background:rgba(14,31,48,.42);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s ease}
   body.menu-open .backdrop{opacity:1;pointer-events:auto}
-  .sheet-list{max-height:calc(100vh - 112px)}
+  .sheet-list{max-height:calc(100vh - 112px);padding-bottom:calc(28px + env(safe-area-inset-bottom));scroll-padding-bottom:calc(28px + env(safe-area-inset-bottom))}
   .sheet-button{grid-template-columns:38px 1fr}
   .viewer-title h2{font-size:20px}
 }
 @media(max-width:560px){
+  .hero-logo{width:84px;flex-basis:84px}
   .count-badge{font-size:13px}
   .hero-inner{align-items:flex-start}
   .hero-title{align-items:flex-start}
@@ -80,7 +84,7 @@ iframe{width:100%;height:760px;border:0;background:var(--paper);border-radius:8p
   .viewer-toolbar{align-items:center;flex-direction:row}
   .viewer-title{flex:1;min-width:0}
   .icon-button{width:44px;height:40px;flex:0 0 44px}
-  .frame-wrap{padding:8px}
+  .frame-wrap{padding:0}
 }
 @media(prefers-reduced-motion:no-preference){
   .hero{animation:heroIn .35s ease both}
@@ -116,8 +120,13 @@ iframe{width:100%;height:760px;border:0;background:var(--paper);border-radius:8p
             <path d="M0 88c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24C10.7 112 0 101.3 0 88zm0 160c0-13.3 10.7-24 24-24h400c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm448 160c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24h400c13.3 0 24 10.7 24 24z"/>
           </svg>
         </button>
-        <div>
-          <div class="eyebrow">CEPC · Archivio operativo</div>
+        <svg class="brand-logo hero-logo" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-label="CEPC Vicenza" role="img">
+          <text x="0" y="48" font-family="Manrope, system-ui, sans-serif" font-weight="700" font-size="44" fill="#f4f0ef" textLength="120" lengthAdjust="spacingAndGlyphs">CEPC</text>
+          <line x1="0" y1="57" x2="120" y2="57" stroke="#c49a3c" stroke-width="1" opacity="0.55"/>
+          <text x="0" y="72" font-family="Manrope, system-ui, sans-serif" font-weight="700" font-size="13" fill="#c49a3c" textLength="120" lengthAdjust="spacing">VICENZA</text>
+        </svg>
+        <div class="hero-heading">
+          <div class="eyebrow">Archivio operativo</div>
           <h1>Indice Schede</h1>
         </div>
       </div>
@@ -348,18 +357,12 @@ function resizeViewer() {
     const doc = viewer.contentDocument || viewer.contentWindow.document;
     doc.documentElement.style.overflow = 'hidden';
     doc.body.style.overflow = 'hidden';
-    viewer.style.height = '1px';
-
     const card = doc.querySelector('.scheda');
     const bodyStyle = doc.defaultView.getComputedStyle(doc.body);
     const bodyPadding = (parseFloat(bodyStyle.paddingTop) || 0) + (parseFloat(bodyStyle.paddingBottom) || 0);
     const cardHeight = card ? card.getBoundingClientRect().height : 0;
-    const height = Math.max(
-      520,
-      Math.ceil(cardHeight + bodyPadding),
-      doc.documentElement.scrollHeight,
-      doc.body.scrollHeight
-    ) + 48;
+    const contentHeight = card ? Math.ceil(cardHeight + bodyPadding) : Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight);
+    const height = Math.max(520, contentHeight);
     viewer.style.height = `${height}px`;
   } catch (error) {
     viewer.style.height = '760px';

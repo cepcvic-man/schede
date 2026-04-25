@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CEPC Vicenza — Logo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      background: #0c0a0b;
+      font-family: "Manrope", system-ui, sans-serif;
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      padding: 48px;
+    }
+
+    svg text, svg line { font-family: "Manrope", system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="logo-wrap">
+    <svg viewBox="0 0 120 80" width="240" height="160"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-label="CEPC Vicenza">
+      <text x="0" y="48"
+        font-family="Manrope, system-ui, sans-serif"
+        font-weight="700"
+        font-size="44"
+        fill="#f4f0ef"
+        textLength="120"
+        lengthAdjust="spacingAndGlyphs">CEPC</text>
+      <line x1="0" y1="57" x2="120" y2="57"
+        stroke="#c49a3c" stroke-width="1" opacity="0.55"/>
+      <text x="0" y="72"
+        font-family="Manrope, system-ui, sans-serif"
+        font-weight="700"
+        font-size="13"
+        fill="#c49a3c"
+        textLength="120"
+        lengthAdjust="spacing">VICENZA</text>
+    </svg>
+  </div>
+</body>
+</html>
