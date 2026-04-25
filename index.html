@@ -67,11 +67,11 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
   h1{font-size:29px}
   .workspace{grid-template-columns:1fr;padding:14px 12px 22px}
-  .index-panel{position:fixed;z-index:40;top:0;bottom:0;left:0;width:min(360px,88vw);border-radius:0;transform:translateX(-105%);transition:transform .22s ease;box-shadow:8px 0 24px rgba(0,0,0,.22);visibility:hidden;pointer-events:none}
+  .index-panel{position:fixed;z-index:40;top:0;bottom:0;left:0;width:min(360px,88vw);border-radius:0;transform:translateX(-105%);transition:transform .22s ease;box-shadow:8px 0 24px rgba(0,0,0,.22);visibility:hidden;pointer-events:none;display:flex;flex-direction:column}
   body.menu-open .index-panel{transform:translateX(0);visibility:visible;pointer-events:auto}
   .backdrop{display:block;position:fixed;inset:0;background:rgba(14,31,48,.42);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s ease}
   body.menu-open .backdrop{opacity:1;pointer-events:auto}
-  .sheet-list{max-height:calc(100vh - 112px);padding-bottom:calc(28px + env(safe-area-inset-bottom));scroll-padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+  .sheet-list{flex:1;min-height:0;max-height:none;padding-bottom:calc(28px + env(safe-area-inset-bottom));scroll-padding-bottom:calc(28px + env(safe-area-inset-bottom))}
   .sheet-button{grid-template-columns:38px 1fr}
   .viewer-title h2{font-size:20px}
 }
