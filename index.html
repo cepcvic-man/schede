@@ -99,6 +99,10 @@ iframe{width:100%;height:760px;border:0;background:var(--paper);border-radius:8p
   body.printing-sheet .frame-wrap{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;box-shadow:none!important;border:0!important;background:#fff!important;min-height:0!important}
   body.printing-sheet iframe{display:block!important;width:100%!important;height:var(--print-frame-height, 2000px)!important;border:0!important;border-radius:0!important;overflow:visible!important;background:#fff!important}
 }
+@media print{
+  body.printing-sheet .frame-wrap{width:720px!important;margin:0 auto!important}
+  body.printing-sheet iframe{width:720px!important;max-width:none!important}
+}
 </style>
 </head>
 <body>
@@ -239,7 +243,23 @@ function printCurrentSheet() {
       const sourceUrl = new URL(sheet.file, window.location.href);
       const printHtml = sourceDoc.documentElement.outerHTML.replace(
         '<head>',
-        `<head><base href="${sourceUrl.href}">`
+        `<head><base href="${sourceUrl.href}"><style>
+          @page{size:auto;margin:10mm}
+          html,body{width:720px!important;min-width:720px!important;background:#fff!important}
+          body{display:flex!important;justify-content:center!important;padding:0!important}
+          .scheda{width:680px!important;max-width:none!important;border-radius:10px!important;box-shadow:none!important}
+          .scheda-header{padding:14px 20px!important;display:flex!important;align-items:center!important;flex-wrap:nowrap!important}
+          .badge{margin-right:12px!important;font-size:16px!important}
+          .scheda-header h1{font-size:22px!important;line-height:1!important}
+          .step-row,.shared-layout,.storage-layout{display:grid!important;grid-template-columns:160px 1fr!important}
+          .step-img-cell,.shared-img,.storage-left{border-right:1px solid #e2e2df!important;border-bottom:0!important;padding:16px!important}
+          .step-img-cell img{max-width:128px!important;max-height:160px!important;width:100%!important;height:auto!important;object-fit:contain!important}
+          .shared-img img,.storage-left img{max-width:128px!important;max-height:200px!important;width:100%!important;height:auto!important;object-fit:contain!important}
+          .step-text-cell{padding:16px 18px!important}
+          .shared-steps,.storage-sub{padding:12px 18px!important}
+          .step-body{padding-left:14px!important}
+          .scheda-footer{display:flex!important;justify-content:space-between!important;align-items:center!important;flex-direction:row!important;padding:8px 16px!important}
+        </style>`
       );
       let didPrint = false;
       const runPrint = () => {
