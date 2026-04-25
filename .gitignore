@@ -1,0 +1,14 @@
+# Work files and generation inputs
+.claude/
+PDF/
+imgs_*/
+preview_*.png
+tools/
+
+# Local artifacts
+nul
+*.docx
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
