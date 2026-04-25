@@ -262,17 +262,28 @@ function printCurrentSheet() {
         </style>`
       );
       let didPrint = false;
+      let didClose = false;
+      const closePrintWindow = () => {
+        if (didClose || printWindow.closed) return;
+        didClose = true;
+        setTimeout(() => printWindow.close(), 250);
+      };
       const runPrint = () => {
         if (didPrint) return;
         didPrint = true;
         printWindow.focus();
         printWindow.print();
+        setTimeout(closePrintWindow, 1500);
       };
 
       printWindow.document.open();
       printWindow.document.write(printHtml);
       printWindow.document.close();
       printWindow.focus();
+      printWindow.addEventListener('afterprint', closePrintWindow, {once:true});
+      printWindow.addEventListener('focus', () => {
+        if (didPrint) closePrintWindow();
+      }, {once:true});
       printWindow.addEventListener('load', runPrint, {once:true});
       setTimeout(runPrint, 350);
       return;
