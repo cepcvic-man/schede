@@ -227,11 +227,44 @@ function selectSheet(number) {
 
 function printCurrentSheet() {
   try {
+    const sheet = sheets.find(item => item.number === activeNumber);
+    if (!sheet) return;
+    const isMobilePrint = window.matchMedia('(max-width: 720px), (pointer: coarse)').matches;
+
+    if (isMobilePrint) {
+      const printWindow = window.open('', '_blank');
+      if (!printWindow) return;
+      const sourceDoc = viewer.contentDocument || viewer.contentWindow.document;
+
+      const sourceUrl = new URL(sheet.file, window.location.href);
+      const printHtml = sourceDoc.documentElement.outerHTML.replace(
+        '<head>',
+        `<head><base href="${sourceUrl.href}">`
+      );
+      let didPrint = false;
+      const runPrint = () => {
+        if (didPrint) return;
+        didPrint = true;
+        printWindow.focus();
+        printWindow.print();
+      };
+
+      printWindow.document.open();
+      printWindow.document.write(printHtml);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.addEventListener('load', runPrint, {once:true});
+      setTimeout(runPrint, 350);
+      return;
+    }
+
     resizeViewer();
     document.documentElement.style.setProperty('--print-frame-height', viewer.style.height || `${viewer.offsetHeight}px`);
     document.body.classList.add('printing-sheet');
     window.print();
   } catch (error) {
+    const sheet = sheets.find(item => item.number === activeNumber);
+    if (sheet) window.open(sheet.file, '_blank');
     console.error('Impossibile stampare la scheda selezionata.', error);
   }
 }
