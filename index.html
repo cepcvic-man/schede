@@ -217,6 +217,7 @@ function selectSheet(number) {
   if (!sheet) return;
 
   activeNumber = sheet.number;
+  viewer.style.height = '760px';
   viewer.src = sheet.file;
   heading.textContent = sheet.title;
   kicker.textContent = `Scheda ${sheet.number}`;
@@ -282,16 +283,21 @@ function resizeViewer() {
     const doc = viewer.contentDocument || viewer.contentWindow.document;
     doc.documentElement.style.overflow = 'hidden';
     doc.body.style.overflow = 'hidden';
+    viewer.style.height = '1px';
+
+    const card = doc.querySelector('.scheda');
+    const bodyStyle = doc.defaultView.getComputedStyle(doc.body);
+    const bodyPadding = (parseFloat(bodyStyle.paddingTop) || 0) + (parseFloat(bodyStyle.paddingBottom) || 0);
+    const cardHeight = card ? card.getBoundingClientRect().height : 0;
     const height = Math.max(
-      680,
+      520,
+      Math.ceil(cardHeight + bodyPadding),
       doc.documentElement.scrollHeight,
-      doc.body.scrollHeight,
-      doc.documentElement.offsetHeight,
-      doc.body.offsetHeight
+      doc.body.scrollHeight
     ) + 48;
     viewer.style.height = `${height}px`;
   } catch (error) {
-    viewer.style.height = '1800px';
+    viewer.style.height = '760px';
   }
 }
 
