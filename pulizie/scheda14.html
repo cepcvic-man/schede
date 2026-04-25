@@ -29,12 +29,12 @@ body{font-family:'Barlow',sans-serif;background:#f0f0ee;display:flex;justify-con
 .step-img-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;background:#fff;border-right:1px solid #e2e2df;gap:0}
 .step-img-cell img{max-width:128px;max-height:160px;display:block;width:auto;height:auto;object-fit:contain}
 .step-text-cell{padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:6px;background:#F2F2F0}
-.step-kicker{display:flex;align-items:center;gap:7px}
+.step-kicker{display:flex;align-items:center;gap:8px}
 .step-dot{width:7px;height:7px;border-radius:50%;background:#2E6DA4;flex-shrink:0}
 .step-dot.navy{background:#1A3A5C}
-.step-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#2E6DA4}
+.step-label{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#1A3A5C;margin-bottom:0}
 .step-label.navy{color:#1A3A5C}
-.step-body{font-size:13px;line-height:1.55;color:#555;padding-left:14px}
+.step-body{font-size:13px;line-height:1.55;color:#555;padding-left:0}
 
 /* shared layout: 1 image left, multiple steps right (PULIZIA) */
 .shared-layout{display:grid;grid-template-columns:160px 1fr;border-top:1px solid #e2e2df}
@@ -71,7 +71,6 @@ body{padding:0;background:#fff}
 .step-img-cell,.shared-img,.storage-left{border-right:0;border-bottom:1px solid #e2e2df;padding:14px}
 .step-img-cell img,.shared-img img,.storage-left img{width:auto;max-width:min(100%,260px);height:auto;max-height:280px;object-fit:contain}
 .step-text-cell,.shared-steps,.storage-sub{padding:14px}
-.step-body{padding-left:0}
 .storage-right{min-width:0}
 .scheda-footer{align-items:flex-start;flex-direction:column;gap:3px;padding:8px 14px}
 }
@@ -103,7 +102,7 @@ body{padding:0;background:#fff}
     <div class="shared-steps">
       <div class="layout-step">
         <div class="step-kicker"><span class="step-label">Rimozione sporco grossolano</span></div>
-        <p class="step-body"><ul class="bullet-list"><li>Battere delicatamente la scopa contro una superficie solida</li><li>Eliminare polvere, terra e residui incastrati tra le fibre</li><li>Utilizzare guanti per maggiore igiene</li></ul></p>
+        <div class="step-body"><ul class="bullet-list"><li>Battere delicatamente la scopa contro una superficie solida</li><li>Eliminare polvere, terra e residui incastrati tra le fibre</li><li>Utilizzare guanti per maggiore igiene</li></ul></div>
       </div></div>
   </div>
 
