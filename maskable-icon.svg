@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CEPC Vicenza">
+  <rect width="512" height="512" fill="#1A3A5C"/>
+  <g transform="translate(86 176)">
+    <text x="0" y="96" font-family="Manrope, Arial, sans-serif" font-weight="700" font-size="124" fill="#f4f0ef" textLength="340" lengthAdjust="spacingAndGlyphs">CEPC</text>
+    <line x1="0" y1="122" x2="340" y2="122" stroke="#c49a3c" stroke-width="6" opacity="0.7"/>
+    <text x="0" y="170" font-family="Manrope, Arial, sans-serif" font-weight="700" font-size="38" fill="#c49a3c" textLength="340" lengthAdjust="spacing">VICENZA</text>
+  </g>
+</svg>
