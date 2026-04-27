@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cepc-schede-v1';
+const CACHE_NAME = 'cepc-schede-v2';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -56,6 +56,22 @@ self.addEventListener('fetch', event => {
   const requestUrl = new URL(request.url);
 
   if (request.method !== 'GET' || requestUrl.origin !== self.location.origin) {
+    return;
+  }
+
+  const isDocument = request.mode === 'navigate' || request.destination === 'document';
+  const isSheet = requestUrl.pathname.includes('/pulizie/');
+
+  if (isDocument || isSheet) {
+    event.respondWith(
+      fetch(request).then(response => {
+        if (!response || response.status !== 200) return response;
+
+        const responseCopy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, responseCopy));
+        return response;
+      }).catch(() => caches.match(request))
+    );
     return;
   }
 
