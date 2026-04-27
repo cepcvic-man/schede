@@ -34,15 +34,19 @@ button{cursor:pointer}
 .nav-button{border:1px solid transparent;background:transparent;color:#fff;border-radius:6px;padding:9px 11px;display:inline-flex;align-items:center;gap:8px;font-weight:600;line-height:1;transition:background .16s ease,border-color .16s ease,transform .16s ease}
 .nav-button:hover,.nav-button.active{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
 .nav-button svg{width:18px;height:18px;fill:currentColor;display:block}
-.hero-home{position:relative;overflow:hidden;background:linear-gradient(118deg,#fff 0%,#f8fbfd 47%,#e7f0f7 100%);border-bottom:1px solid var(--line)}
-.hero-home:before{content:"";position:absolute;right:-12%;top:-58%;width:72%;height:128%;border:1px solid rgba(46,109,164,.13);border-radius:50%;transform:rotate(-14deg)}
-.hero-home:after{content:"";position:absolute;right:-5%;bottom:-68%;width:68%;height:112%;border:1px solid rgba(196,154,60,.17);border-radius:50%;transform:rotate(-8deg)}
-.hero-home-inner{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:36px 16px 42px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;align-items:center}
-.hero-symbol{width:150px;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,var(--teal),#06666b);display:grid;place-items:center;color:#fff;box-shadow:0 18px 45px rgba(13,143,146,.22)}
-.hero-symbol svg{width:78px;height:78px;fill:currentColor}
+.hero-home{position:relative;overflow:hidden;background:linear-gradient(118deg,#fff 0%,#f7fafb 48%,#e9f1f6 100%);border-bottom:1px solid var(--line)}
+.hero-home:before{content:"";position:absolute;right:-18%;top:-70%;width:62%;height:150%;border:1px solid rgba(46,109,164,.13);border-radius:50%;transform:rotate(-14deg)}
+.hero-home:after{content:"";position:absolute;right:8%;bottom:-92%;width:74%;height:130%;border:1px solid rgba(196,154,60,.14);border-radius:50%;transform:rotate(-8deg)}
+.hero-home-inner{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:24px 16px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.hero-symbol{width:82px;aspect-ratio:1;border-radius:8px;background:linear-gradient(145deg,var(--teal),#06666b);display:grid;place-items:center;color:#fff;box-shadow:0 14px 32px rgba(13,143,146,.18)}
+.hero-symbol svg{width:40px;height:40px;fill:currentColor}
 .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
-h1{font-family:'Barlow Condensed',sans-serif;font-size:58px;line-height:.95;font-weight:700;letter-spacing:.025em;text-transform:uppercase;color:var(--navy-deep)}
-.hero-copy{font-size:19px;line-height:1.45;color:#526273;margin-top:12px;max-width:720px}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:46px;line-height:.96;font-weight:700;letter-spacing:.025em;text-transform:uppercase;color:var(--navy-deep)}
+.hero-copy{font-size:17px;line-height:1.42;color:#526273;margin-top:9px;max-width:660px}
+.home-status-strip{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;align-items:center}
+.status-pill{min-height:34px;border-radius:6px;padding:8px 11px;display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #d9e1e6;color:var(--navy);font-weight:700;box-shadow:0 2px 8px rgba(16,41,65,.05)}
+.status-pill.available{background:var(--navy);border-color:var(--navy);color:#fff}
+.status-pill svg{width:16px;height:16px;fill:currentColor}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center}
 .primary-action,.secondary-action{min-height:42px;border-radius:6px;padding:11px 15px;display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;transition:background .16s ease,border-color .16s ease,transform .16s ease}
 .primary-action{border:0;background:var(--navy);color:#fff}
@@ -50,29 +54,38 @@ h1{font-family:'Barlow Condensed',sans-serif;font-size:58px;line-height:.95;font
 .secondary-action{border:1px solid rgba(46,109,164,.32);background:rgba(255,255,255,.72);color:var(--navy)}
 .secondary-action:hover{border-color:var(--blue);transform:translateY(-1px)}
 .primary-action svg,.secondary-action svg{width:18px;height:18px;fill:currentColor}
-.home-content{width:min(1180px,100%);margin:0 auto;padding:22px 16px 28px}
+.home-content{width:min(1180px,100%);margin:0 auto;padding:20px 16px 28px}
+.home-dashboard{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
 .home-main{min-width:0}
-.home-search{position:relative;margin-bottom:24px}
+.home-search{position:relative;margin-bottom:16px}
 .home-search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:21px;height:21px;fill:#607188}
 .home-search input{width:100%;height:56px;border:1px solid #ccd6dd;border-radius:8px;background:#fff;padding:0 16px 0 48px;color:var(--ink);font-size:16px;outline:none;box-shadow:0 3px 12px rgba(16,41,65,.05)}
 .home-search input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(46,109,164,.14)}
 .section-title{font-family:'Barlow Condensed',sans-serif;font-size:30px;line-height:1;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:14px}
-.category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
-.category-card{background:#fff;border:1px solid #e3e6e7;border-radius:8px;min-height:268px;padding:20px 16px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 4px 16px rgba(16,41,65,.08);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-.category-card.available:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(16,41,65,.12);border-color:rgba(46,109,164,.45)}
-.category-icon{width:92px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;margin-bottom:17px;background:#e8f3f2;color:var(--teal)}
-.category-card.available .category-icon{background:linear-gradient(145deg,var(--teal),#087274);color:#fff}
+.home-primary-section{background:#fff;border:1px solid #e0e5e7;border-radius:8px;padding:16px;display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:16px;align-items:center;box-shadow:0 4px 16px rgba(16,41,65,.08);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.home-primary-section:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,41,65,.12);border-color:rgba(46,109,164,.42)}
+.category-icon{width:68px;aspect-ratio:1;border-radius:8px;display:grid;place-items:center;background:#e8f3f2;color:var(--teal)}
+.home-primary-section .category-icon{background:linear-gradient(145deg,var(--teal),#087274);color:#fff}
 .category-icon.blue{background:#eaf1f7;color:#2E6DA4}.category-icon.violet{background:#eee7fb;color:#5b4b93}.category-icon.green{background:#e8f3f2;color:#347d7a}.category-icon.gold{background:#fbf2e1;color:#b87915}
-.category-icon svg{width:42px;height:42px;fill:currentColor}
-.category-card h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;line-height:1;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:10px}
-.sheet-total{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.04em;color:var(--teal);margin-bottom:12px}
-.category-card p{font-size:14px;line-height:1.42;color:#667487;margin-bottom:18px}
+.category-icon svg{width:32px;height:32px;fill:currentColor}
+.section-copy h3{font-family:'Barlow Condensed',sans-serif;font-size:28px;line-height:1;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:5px}
+.sheet-total{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.04em;color:var(--teal)}
+.section-copy p{font-size:15px;line-height:1.42;color:#667487;margin-top:7px;max-width:520px}
 .card-spacer{flex:1}
-.card-button{width:100%;min-height:39px;border-radius:6px;border:1px solid var(--blue);background:#fff;color:var(--navy);font-size:15px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:background .16s ease,color .16s ease,transform .16s ease}
-.category-card.available .card-button{background:var(--navy);border-color:var(--navy);color:#fff}
-.category-card.available .card-button:hover{background:var(--navy-deep);transform:translateY(-1px)}
+.card-button{min-height:42px;border-radius:6px;border:1px solid var(--navy);background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:9px;white-space:nowrap;transition:background .16s ease,color .16s ease,transform .16s ease}
+.card-button:hover{background:var(--navy-deep);transform:translateY(-1px)}
 .card-button[disabled]{cursor:not-allowed;opacity:.82}
 .card-button svg{width:17px;height:17px;fill:currentColor}
+.home-side{background:#fff;border:1px solid #e1e5e7;border-radius:8px;padding:17px 18px;box-shadow:0 4px 16px rgba(16,41,65,.08)}
+.home-side h2{font-family:'Barlow Condensed',sans-serif;font-size:25px;line-height:1;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:13px}
+.future-list{display:grid;gap:10px}
+.future-item{display:grid;grid-template-columns:42px minmax(0,1fr);gap:11px;align-items:center;padding:10px 0;border-top:1px solid #e7e9e7}
+.future-item:first-child{border-top:0;padding-top:0}
+.future-item h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;line-height:1;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:4px}
+.future-item span{font-size:13px;color:#6d7580}
+.future-icon{width:42px;aspect-ratio:1;border-radius:8px;display:grid;place-items:center}
+.future-icon svg{width:21px;height:21px;fill:currentColor}
+.status-label{display:inline-flex;align-items:center;width:max-content;margin-top:5px;border-radius:999px;padding:4px 9px;background:#f0edf7;color:#665595;font-size:12px;font-weight:700}
 .search-results{display:none;background:#fff;border:1px solid #e1e5e7;border-radius:8px;margin:-8px 0 24px;overflow:hidden;box-shadow:0 6px 18px rgba(16,41,65,.08)}
 .search-results.active{display:block}
 .result-button{width:100%;border:0;border-bottom:1px solid #ecefed;background:#fff;padding:12px 14px;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;text-align:left;color:var(--ink)}
@@ -123,7 +136,7 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
 .sheet-list.no-results + .empty{display:block}
 @media(max-width:1100px){
   .topbar-inner{gap:12px}.topnav{flex:0 0 auto}.context-title{font-size:16px}
-  .category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .home-dashboard{grid-template-columns:1fr}.home-side{padding:15px 16px}.future-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.future-item:nth-child(2){border-top:0;padding-top:0}
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
   .workspace{grid-template-columns:1fr;padding:14px 12px 22px}.index-panel{position:fixed;z-index:40;top:0;bottom:0;left:0;width:min(360px,88vw);border-radius:0;transform:translateX(-105%);transition:transform .22s ease;box-shadow:8px 0 24px rgba(0,0,0,.22);visibility:hidden;pointer-events:none;display:flex;flex-direction:column}
   body.menu-open .index-panel{transform:translateX(0);visibility:visible;pointer-events:auto}.backdrop{display:block;position:fixed;inset:0;background:rgba(14,31,48,.42);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s ease}body.menu-open .backdrop{opacity:1;pointer-events:auto}
@@ -131,15 +144,15 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
 }
 @media(max-width:760px){
   .topbar-inner{padding:12px 16px}.brand{gap:10px;flex:1;min-width:0}.brand-mark{width:104px;flex-basis:104px}.brand-divider{display:none}.brand-context{display:none;min-width:0;height:69px;overflow:hidden;justify-content:center}.context-title{font-size:38px;line-height:.86;letter-spacing:.015em;overflow:hidden;text-overflow:ellipsis;margin-bottom:5px}.context-kicker{font-size:11px;letter-spacing:.1em;margin-bottom:0}.topnav{gap:6px}.nav-button{padding:9px}.nav-button span{display:none}body.manual-open .brand-context{display:flex;flex-direction:column}
-  .hero-home-inner{grid-template-columns:72px minmax(0,1fr);gap:12px;padding:18px 16px 22px}.hero-symbol{width:72px;align-self:center}.hero-symbol svg{width:38px;height:38px}h1{font-size:34px}.hero-copy{font-size:15px;line-height:1.38;margin-top:9px}.hero-actions{margin-top:2px}.primary-action{width:100%;justify-content:center}
-  .category-grid{grid-template-columns:1fr;gap:8px}.home-content{padding:16px 16px 22px}.home-search{margin-bottom:16px}.home-search input{height:48px}.section-title{font-size:25px;margin-bottom:10px}.category-card{min-height:0;padding:14px 16px;display:grid;grid-template-columns:54px minmax(0,1fr);grid-template-areas:"icon title" "icon meta" "desc desc" "action action";column-gap:14px;row-gap:7px;align-items:center;text-align:left}.category-icon{grid-area:icon;width:54px;margin:0}.category-icon svg{width:26px;height:26px}.category-card h3{grid-area:title;font-size:21px;margin:0}.sheet-total{grid-area:meta;justify-self:start;margin:0;font-size:18px}.category-card p{grid-area:desc;margin:2px 0 4px;font-size:13px;line-height:1.32}.card-spacer{display:none}.card-button{grid-area:action;min-height:36px}.category-card:not(.available){grid-template-areas:"icon title" "desc desc"}.category-card:not(.available) p{margin-top:0}
+  .hero-home-inner{grid-template-columns:minmax(0,1fr) 54px;gap:12px;padding:16px}.hero-symbol{width:54px;align-self:start}.hero-symbol svg{width:28px;height:28px}.eyebrow{font-size:12px;margin-bottom:5px}h1{font-size:32px;line-height:.94}.hero-copy{font-size:14px;line-height:1.32;margin-top:7px}.home-status-strip{gap:7px;margin-top:10px}.status-pill{min-height:30px;padding:7px 9px;font-size:13px}.status-pill svg{width:14px;height:14px}
+  .home-content{padding:14px 16px 22px}.home-dashboard{gap:14px}.home-search{margin-bottom:12px}.home-search input{height:48px;font-size:15px}.search-results{margin:-4px 0 14px}.section-title{font-size:24px;margin-bottom:9px}.home-primary-section{padding:13px;grid-template-columns:48px minmax(0,1fr);gap:11px;align-items:center}.home-primary-section .category-icon{width:48px}.category-icon svg{width:24px;height:24px}.section-copy h3{font-size:22px;margin:0}.sheet-total{font-size:17px}.section-copy p{grid-column:1 / -1;margin-top:3px;font-size:13px;line-height:1.32}.card-button{grid-column:1 / -1;width:100%;min-height:38px;padding:9px 12px}.future-list{grid-template-columns:1fr;gap:0}.future-item,.future-item:nth-child(2){border-top:1px solid #e7e9e7;padding:9px 0}.future-item:first-child{border-top:0;padding-top:0}.home-side h2{font-size:22px;margin-bottom:8px}.future-item h3{font-size:17px}.future-item span{font-size:12px}
   .home-footer-inner{grid-template-columns:1fr}.footer-item{border-right:0;border-bottom:1px solid var(--line);justify-content:flex-start}.footer-item:last-child{border-bottom:0}
 }
 @media(max-width:560px){
   .workspace{padding:0 0 22px}.viewer-toolbar{align-items:center;flex-direction:row}.viewer-title{flex:1;min-width:0}.icon-button{width:44px;height:40px;flex:0 0 44px}.frame-wrap{border-radius:0;box-shadow:none;padding:0}
 }
 @media(prefers-reduced-motion:no-preference){
-  .hero-home .hero-symbol{animation:scaleIn .42s ease both}.hero-home h1,.hero-copy,.hero-actions{animation:rise .42s ease both}.hero-copy{animation-delay:.06s}.hero-actions{animation-delay:.1s}.category-card{animation:rise .36s ease both}.viewer-panel{animation:rise .32s ease .06s both}
+  .hero-home .hero-symbol{animation:scaleIn .42s ease both}.hero-home h1,.hero-copy,.home-status-strip{animation:rise .42s ease both}.hero-copy{animation-delay:.06s}.home-status-strip{animation-delay:.1s}.home-primary-section,.home-side{animation:rise .36s ease both}.viewer-panel{animation:rise .32s ease .06s both}
   @keyframes heroIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 }
 @media print{
@@ -172,39 +185,48 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
   <div class="home-view">
     <section class="hero-home" aria-labelledby="home-title">
       <div class="hero-home-inner">
-        <div class="hero-symbol" aria-hidden="true"><svg viewBox="0 0 576 512"><path d="M249.6 11.7c15.4-14.6 39.4-14.6 54.8 0 54.6 51.7 132.6 52.9 206.9 52.3 18-.2 33.5 12.2 37.4 29.8C565 167.2 553.5 244.6 515.6 311.7c-38 67.2-98.7 119.5-185.3 154.3l-26.7 10.7c-10 4-21.2 4-31.2 0L245.7 466C159.1 431.2 98.4 378.9 60.4 311.7 22.5 244.6 11 167.2 27.3 93.8 31.2 76.2 46.7 63.8 64.7 64c74.3.6 152.3-.6 206.9-52.3zM192 176c-17.7 0-32 14.3-32 32v128c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V208c0-17.7-14.3-32-32-32H192zm32 48h128v32H224v-32zm0 64h128v32H224v-32z"/></svg></div>
         <div>
           <div class="eyebrow">Manuale digitale</div>
           <h1 id="home-title">Manuale operativo CEPC</h1>
-          <p class="hero-copy">Archivio digitale delle schede operative, organizzato per categoria e pronto alla consultazione in reparto.</p>
-          <div class="hero-actions">
-            <button class="primary-action" id="hero-open-sheets" type="button"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64z"/></svg><span><span id="hero-count">23</span> schede pulizia disponibili</span></button>
+          <p class="hero-copy">Consulta rapidamente schede, procedure e indicazioni operative di reparto.</p>
+          <div class="home-status-strip">
+            <span class="status-pill available"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64z"/></svg><span><span id="hero-count">23</span> schede pulizia</span></span>
+            <span class="status-pill">Aggiornato Aprile 2026</span>
           </div>
         </div>
+        <div class="hero-symbol" aria-hidden="true"><svg viewBox="0 0 576 512"><path d="M249.6 11.7c15.4-14.6 39.4-14.6 54.8 0 54.6 51.7 132.6 52.9 206.9 52.3 18-.2 33.5 12.2 37.4 29.8C565 167.2 553.5 244.6 515.6 311.7c-38 67.2-98.7 119.5-185.3 154.3l-26.7 10.7c-10 4-21.2 4-31.2 0L245.7 466C159.1 431.2 98.4 378.9 60.4 311.7 22.5 244.6 11 167.2 27.3 93.8 31.2 76.2 46.7 63.8 64.7 64c74.3.6 152.3-.6 206.9-52.3zM192 176c-17.7 0-32 14.3-32 32v128c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V208c0-17.7-14.3-32-32-32H192zm32 48h128v32H224v-32zm0 64h128v32H224v-32z"/></svg></div>
       </div>
     </section>
 
     <main class="home-content">
-      <section class="home-main" aria-labelledby="sections-title">
-        <div class="home-search">
-          <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208z"/></svg>
-          <input id="home-search" type="search" placeholder="Cerca schede e categorie..." autocomplete="off">
-        </div>
-        <div class="search-results" id="search-results" aria-live="polite"></div>
-        <h2 class="section-title" id="sections-title">Sezioni del manuale</h2>
-        <div class="category-grid">
-          <article class="category-card available">
+      <div class="home-dashboard">
+        <section class="home-main" aria-labelledby="sections-title">
+          <div class="home-search">
+            <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208z"/></svg>
+            <input id="home-search" type="search" placeholder="Cerca prodotto, procedura o scheda..." autocomplete="off">
+          </div>
+          <div class="search-results" id="search-results" aria-live="polite"></div>
+          <h2 class="section-title" id="sections-title">Sezioni del manuale</h2>
+          <article class="home-primary-section">
             <div class="category-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M176 24c0-13.3 10.7-24 24-24h112c13.3 0 24 10.7 24 24v40h64c26.5 0 48 21.5 48 48v112H64V112c0-26.5 21.5-48 48-48h64V24zm48 40h64V48h-64v16zM64 256h384v208c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V256zm255.7 38.3c-7.6-3.8-16.8-2.3-22.8 3.7l-84 84-31.4-31.4c-7.8-7.8-20.5-7.8-28.3 0s-7.8 20.5 0 28.3l45.6 45.6c7.8 7.8 20.5 7.8 28.3 0l98.1-98.1c6-6 7.5-15.2 3.7-22.8-1.9-3.8-5.1-7-9.2-9.3z"/></svg></div>
-            <h3>Pulizia</h3><div class="sheet-total"><span id="category-count">23</span> schede</div>
-            <p>Prodotti, procedure, stoccaggio e norme di sicurezza per le attivita di pulizia.</p><div class="card-spacer"></div>
+            <div class="section-copy">
+              <h3>Pulizia</h3>
+              <div class="sheet-total"><span id="category-count">23</span> schede disponibili</div>
+              <p>Prodotti, procedure, stoccaggio e norme di sicurezza per le attivita di pulizia.</p>
+            </div>
             <button class="card-button" id="open-cleaning" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
           </article>
-          <article class="category-card"><div class="category-icon blue"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm64 96h192c17.7 0 32 14.3 32 32v64H96v-64c0-17.7 14.3-32 32-32zm96 352a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"/></svg></div><h3>Elettrodomestici</h3><p>Schede dedicate a gestione, manutenzione e sicurezza degli elettrodomestici.</p></article>
-          <article class="category-card"><div class="category-icon violet"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M352 320c88.4 0 160-71.6 160-160 0-15.3-2.2-30.1-6.2-44.2-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8-57.9-57.9 76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C404.1 24.2 389.3 22 374 22c-88.4 0-160 71.6-160 160 0 20.2 3.8 39.6 10.6 57.5L23 441c-30.7 30.7-30.7 80.5 0 111.2s80.5 30.7 111.2 0l201.5-201.5c17.9 6.8 37.3 10.6 57.5 10.6z"/></svg></div><h3>Ferramenta</h3><p>Procedure, utilizzo e stoccaggio sicuro di utensili e strumenti.</p></article>
-          <article class="category-card"><div class="category-icon green"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M48 0C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h32c0 53 43 96 96 96s96-43 96-96h96c0 53 43 96 96 96s96-43 96-96h32c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480V48c0-26.5-21.5-48-48-48H48zm432 240h112v128h-32c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H272c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H48V48h384v208c0 17.7 14.3 32 32 32h16v-48z"/></svg></div><h3>Attrezzature</h3><p>Istruzioni per uso e manutenzione di attrezzature e macchinari.</p></article>
-          <article class="category-card"><div class="category-icon gold"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M248 0h80c13.3 0 24 10.7 24 24v80h96c17.7 0 32 14.3 32 32v112h48c26.5 0 48 21.5 48 48v168c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V296c0-26.5 21.5-48 48-48h48V136c0-17.7 14.3-32 32-32h96V24c0-13.3 10.7-24 24-24zm0 104h80V48h-80v56zM144 152v96h112v-96H144zm176 0v96h112v-96H320zM48 296v168h208V296H48zm272 0v168h208V296H320z"/></svg></div><h3>Materiali</h3><p>Stoccaggio, gestione e sicurezza dei materiali di consumo.</p></article>
-        </div>
-      </section>
+        </section>
+        <aside class="home-side" aria-labelledby="future-title">
+          <h2 id="future-title">In preparazione</h2>
+          <div class="future-list">
+            <article class="future-item"><div class="future-icon category-icon blue"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm64 96h192c17.7 0 32 14.3 32 32v64H96v-64c0-17.7 14.3-32 32-32zm96 352a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"/></svg></div><div><h3>Elettrodomestici</h3><span>Schede dedicate a gestione e sicurezza.</span><span class="status-label">In preparazione</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon violet"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M352 320c88.4 0 160-71.6 160-160 0-15.3-2.2-30.1-6.2-44.2-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8-57.9-57.9 76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C404.1 24.2 389.3 22 374 22c-88.4 0-160 71.6-160 160 0 20.2 3.8 39.6 10.6 57.5L23 441c-30.7 30.7-30.7 80.5 0 111.2s80.5 30.7 111.2 0l201.5-201.5c17.9 6.8 37.3 10.6 57.5 10.6z"/></svg></div><div><h3>Ferramenta</h3><span>Uso e stoccaggio utensili.</span><span class="status-label">In preparazione</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon green"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M48 0C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h32c0 53 43 96 96 96s96-43 96-96h96c0 53 43 96 96 96s96-43 96-96h32c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480V48c0-26.5-21.5-48-48-48H48zm432 240h112v128h-32c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H272c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H48V48h384v208c0 17.7 14.3 32 32 32h16v-48z"/></svg></div><div><h3>Attrezzature</h3><span>Uso e manutenzione macchinari.</span><span class="status-label">In preparazione</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon gold"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M248 0h80c13.3 0 24 10.7 24 24v80h96c17.7 0 32 14.3 32 32v112h48c26.5 0 48 21.5 48 48v168c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V296c0-26.5 21.5-48 48-48h48V136c0-17.7 14.3-32 32-32h96V24c0-13.3 10.7-24 24-24zm0 104h80V48h-80v56zM144 152v96h112v-96H144zm176 0v96h112v-96H320zM48 296v168h208V296H48zm272 0v168h208V296H320z"/></svg></div><div><h3>Materiali</h3><span>Gestione materiali di consumo.</span><span class="status-label">In preparazione</span></div></article>
+          </div>
+        </aside>
+      </div>
     </main>
     <footer class="home-footer">
       <div class="home-footer-inner">
@@ -433,7 +455,6 @@ document.getElementById('categories-nav').addEventListener('click', () => {
   showHome();
   setTimeout(() => document.getElementById('sections-title').scrollIntoView({behavior:'smooth',block:'start'}), 80);
 });
-document.getElementById('hero-open-sheets').addEventListener('click', showManual);
 document.getElementById('open-cleaning').addEventListener('click', showManual);
 function enhanceFrameControls() {
   try {
