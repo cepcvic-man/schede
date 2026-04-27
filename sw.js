@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cepc-schede-v2';
+const CACHE_NAME = 'cepc-schede-v9';
 const PRECACHE_URLS = [
   './',
   './index.html',
