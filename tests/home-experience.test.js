@@ -13,8 +13,12 @@ mustInclude('home-primary-section', 'home has primary available section');
 mustInclude('future-list', 'future categories use compact list');
 mustInclude('id="open-cleaning"', 'Pulizia entry keeps existing JS hook');
 mustInclude('id="home-search"', 'home search keeps existing JS hook');
+mustInclude('result-copy', 'search result title and category have spacing wrapper');
 mustInclude('renderHomeSearch', 'home search behavior remains wired');
 mustInclude('showManual', 'manual open behavior remains wired');
+
+assert.ok(!html.includes('class="home-footer"'), 'home footer status bar is removed');
+assert.ok(!html.includes('status-label'), 'future category chips are removed');
 
 assert.ok(
   html.indexOf('id="home-search"') < html.indexOf('id="sections-title"'),

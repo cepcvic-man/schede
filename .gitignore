@@ -4,6 +4,7 @@ PDF/
 imgs_*/
 preview_*.png
 tools/
+tests/_tmp_crops/
 
 # Local artifacts
 nul
