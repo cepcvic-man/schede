@@ -7,6 +7,7 @@ tools/
 tests/_tmp_crops/
 
 # Local artifacts
+OLD/
 nul
 *.docx
 
