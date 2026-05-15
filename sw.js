@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cepc-schede-v10';
+const CACHE_NAME = 'cepc-schede-v11';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -29,7 +29,9 @@ const PRECACHE_URLS = [
   './pulizie/scheda21.html',
   './pulizie/scheda22.html',
   './pulizie/scheda23.html',
-  './pulizie/scheda24.html'
+  './pulizie/scheda24.html',
+  './Manuale%20operativo%20CEPC%20-%20Pulizia.pdf',
+  './Manuale%20operativo%20CEPC%20-%20Elettrodomestici.pdf'
 ];
 
 self.addEventListener('install', event => {

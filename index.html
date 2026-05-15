@@ -77,6 +77,9 @@ h1{font-family:'Barlow Condensed',sans-serif;font-size:46px;line-height:.96;font
 .card-button:hover{background:var(--navy-deep);transform:translateY(-1px)}
 .card-button[disabled]{cursor:not-allowed;opacity:.82}
 .card-button svg{width:17px;height:17px;fill:currentColor}
+.pdf-dl-link{display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:7px 11px;border:1px solid rgba(46,109,164,.28);border-radius:5px;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none;transition:border-color .16s ease,background .16s ease,transform .16s ease}
+.pdf-dl-link:hover{border-color:var(--blue);background:rgba(46,109,164,.07);transform:translateY(-1px)}
+.pdf-dl-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
 .home-side{background:#fff;border:1px solid #e1e5e7;border-radius:8px;padding:17px 18px;box-shadow:0 4px 16px rgba(16,41,65,.08)}
 .home-side h2{font-family:'Barlow Condensed',sans-serif;font-size:25px;line-height:1;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:13px}
 .future-list{display:grid;gap:10px}
@@ -209,6 +212,7 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
               <h3>Pulizia</h3>
               <div class="sheet-total"><span id="category-count">24</span> schede disponibili</div>
               <p>Prodotti, procedure, stoccaggio e norme di sicurezza per le attivita di pulizia.</p>
+              <a href="Manuale%20operativo%20CEPC%20-%20Pulizia.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> Scarica manuale PDF</a>
             </div>
             <button class="card-button" id="open-cleaning" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
           </article>
@@ -218,6 +222,7 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
               <h3>Elettrodomestici</h3>
               <div class="sheet-total"><span id="elettro-count">6</span> schede disponibili</div>
               <p>Gestione, pulizia e stoccaggio degli elettrodomestici in dotazione.</p>
+              <a href="Manuale%20operativo%20CEPC%20-%20Elettrodomestici.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> Scarica manuale PDF</a>
             </div>
             <button class="card-button" id="open-elettrodomestici" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
           </article>
