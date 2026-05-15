@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cepc-schede-v9';
+const CACHE_NAME = 'cepc-schede-v10';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -60,7 +60,7 @@ self.addEventListener('fetch', event => {
   }
 
   const isDocument = request.mode === 'navigate' || request.destination === 'document';
-  const isSheet = requestUrl.pathname.includes('/pulizie/');
+  const isSheet = requestUrl.pathname.includes('/pulizie/') || requestUrl.pathname.includes('/elettrodomestici/');
 
   if (isDocument || isSheet) {
     event.respondWith(
