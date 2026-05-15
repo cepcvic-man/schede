@@ -45,7 +45,7 @@ a{color:inherit;text-decoration:none}
 .note-lines{height:190mm;background:repeating-linear-gradient(to bottom, transparent 0, transparent 10.5mm, var(--line) 10.7mm, var(--line) 11mm)}
 
 .intro{padding:58px 56px;break-after:page;min-height:100vh}
-.toc{padding:40px 56px 30px;break-after:page;min-height:0}
+.toc{padding:28px 56px 22px;break-after:page;min-height:0}
 .chapter-kicker{color:var(--blue);font-size:15px;margin:0 0 10px}
 .intro h2,.toc h2{font-family:"Barlow Condensed",Arial,sans-serif;text-transform:uppercase;font-size:44px;line-height:1;margin:0 0 20px;color:var(--navy-deep)}
 .intro p{font-size:17px;line-height:1.55;max-width:620px;margin:0}
@@ -53,11 +53,12 @@ a{color:inherit;text-decoration:none}
 .safety-note strong{font-family:"Barlow Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#6d4800}
 .safety-note span{font-size:14px;color:#5C3D00;line-height:1.45}
 
-.toc nav{display:grid;margin-top:18px;border-top:2px solid var(--navy)}
-.toc-row{display:grid;grid-template-columns:48px 1fr 38px;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding:7px 0}
+.toc h2{font-size:36px;margin-bottom:10px}
+.toc nav{display:grid;margin-top:10px;border-top:2px solid var(--navy)}
+.toc-row{display:grid;grid-template-columns:40px 1fr 32px;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0;line-height:1.05;break-inside:avoid}
 .toc-row::after{text-align:right;color:var(--muted);content:target-counter(attr(href), page)}
-.toc-number{font-family:"Barlow Condensed",Arial,sans-serif;font-size:16px;font-weight:700;color:var(--blue)}
-.toc-title{font-family:"Barlow Condensed",Arial,sans-serif;text-transform:uppercase;font-size:17px;font-weight:700;letter-spacing:.035em;color:var(--navy)}
+.toc-number{font-family:"Barlow Condensed",Arial,sans-serif;font-size:14px;font-weight:700;color:var(--blue)}
+.toc-title{font-family:"Barlow Condensed",Arial,sans-serif;text-transform:uppercase;font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--navy)}
 
 .manual-sheet{break-before:page;padding:18px 0 0;background:#fff}
 .sheet-anchor{display:block;height:0}

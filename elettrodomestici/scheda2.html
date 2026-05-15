@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheda 2 – Lavatrice</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:#f0f0ee;display:flex;justify-content:center;padding:24px 12px}
+.scheda{width:min(680px,100%);background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.scheda-header{background:#1A3A5C;color:#fff;padding:14px 20px;display:flex;align-items:center}
+.badge{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:5px 12px;color:#fff;margin-right:12px}
+.scheda-header h1{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.alert-box{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:#FFF3CD;border-left:5px solid #E8A900}
+.alert-icon{flex-shrink:0;width:30px;height:30px;margin-top:1px}
+.alert-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7A5000;margin-bottom:3px}
+.alert-text{font-size:12.5px;color:#5C3D00;line-height:1.5}
+.alert-text strong{font-weight:600;color:#3D2800}
+.section-bar{display:flex;align-items:center;gap:9px;padding:9px 16px;background:#2E6DA4}
+.section-bar.dark{background:#1A3A5C}
+.section-bar h2{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.step-row{display:grid;grid-template-columns:160px 1fr;border-top:1px solid #e2e2df}
+.step-img-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;background:#fff;border-right:1px solid #e2e2df}
+.step-img-cell img{max-width:128px;max-height:160px;display:block;width:auto;height:auto;object-fit:contain}
+.step-text-cell{padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:6px;background:#F2F2F0}
+.step-kicker{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.step-dot{width:7px;height:7px;border-radius:50%;background:#2E6DA4;flex-shrink:0}
+.step-label{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#1A3A5C}
+.step-body{font-size:13px;line-height:1.55;color:#555}
+.attn-row{padding:12px 18px;background:#FFF8E8;border-top:1px solid #e2e2df;border-left:4px solid #E8A900;display:flex;align-items:flex-start;gap:10px}
+.attn-text{font-size:13px;color:#5C3D00;line-height:1.55}
+.attn-text strong{font-weight:700;color:#7A5000}
+.storage-layout{display:grid;grid-template-columns:160px 1fr;border-top:1px solid #e2e2df}
+.storage-left{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;background:#fff;border-right:1px solid #e2e2df}
+.storage-left img{max-width:128px;max-height:200px;display:block;width:auto;height:auto;object-fit:contain}
+.storage-right{display:flex;flex-direction:column;background:#F0F4F8}
+.storage-sub{padding:12px 18px;border-top:1px solid #dce3e8}
+.storage-sub:first-child{border-top:none}
+.step-num{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#1A3A5C;color:#fff;border-radius:3px;padding:2px 7px;margin-bottom:0}
+.storage-sub-header{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.storage-sub-header .step-num{flex-shrink:0}
+.storage-step-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#1A3A5C;margin-bottom:0}
+.storage-step-body{font-size:13px;line-height:1.55;color:#555}
+.danger-block{background:#FFF0F0;border-top:1px solid #e2e2df;padding:14px 18px;border-left:5px solid #cc2200;text-align:center}
+.danger-title{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8B0000;margin-bottom:4px}
+.danger-text{font-size:14px;font-weight:700;color:#8B0000;letter-spacing:.03em}
+.scheda-footer{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:#F7F7F5;border-top:1px solid #e2e2df;font-size:11px;color:#999}
+@media(max-width:720px){
+body{padding:0;background:#fff}
+.scheda{width:100%;border-radius:0;box-shadow:none}
+.scheda-header{padding:12px 14px}
+.step-row,.storage-layout{grid-template-columns:1fr}
+.step-img-cell,.storage-left{border-right:0;border-bottom:1px solid #e2e2df;padding:14px}
+.step-img-cell img,.storage-left img{max-width:min(100%,260px);max-height:280px}
+.step-text-cell,.storage-sub{padding:14px}
+.scheda-footer{flex-direction:column;gap:3px;padding:8px 14px}
+}
+</style>
+</head>
+<body>
+<div class="scheda">
+
+  <div class="scheda-header">
+    <span class="badge">Scheda 2</span>
+    <h1>Lavatrice</h1>
+  </div>
+
+  <div class="alert-box">
+    <svg class="alert-icon" viewBox="0 0 30 30" fill="none"><path d="M15 2L2 26h26L15 2z" fill="#F5C000" stroke="#E8A900" stroke-width="1.5"/><rect x="13.5" y="11" width="3" height="8" rx="1" fill="#7A5000"/><rect x="13.5" y="21" width="3" height="3" rx="1" fill="#7A5000"/></svg>
+    <div>
+      <p class="alert-title">Attenzione — Sicurezza</p>
+      <p class="alert-text">Prima di eseguire gli interventi di questa scheda di manutenzione, valutare i potenziali rischi e condizioni pericolose che richiedono la compilazione del <strong>DC-85</strong> e leggere il <strong>DC-82</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-bar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+    <h2>Manutenzione e Pulizia</h2>
+  </div>
+
+  <div class="step-row">
+    <div class="step-img-cell">
+      <img src="assets/scheda2-img1.jpeg" alt="Pulizia filtri lavatrice">
+    </div>
+    <div class="step-text-cell">
+      <div class="step-kicker"><span class="step-num">Passo 1</span><span class="step-label">Pulizia filtri</span></div>
+      <p class="step-body">Aprire lo sportellino in basso. Prima di svitare il tappo, porre un recipiente o un panno assorbente davanti al filtro per raccogliere l'acqua residua. Svitare il tappo e rimuovere i residui.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-img-cell">
+      <img src="assets/scheda2-img2.jpeg" alt="Cassetto detersivi lavatrice">
+    </div>
+    <div class="step-text-cell">
+      <div class="step-kicker"><span class="step-num">Passo 2</span><span class="step-label">Cassetto detersivi</span></div>
+      <p class="step-body">Estrarlo e pulirlo per rimuovere i residui di sapone. Prima di riporlo, asciugare con un panno.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-img-cell">
+      <img src="assets/scheda2-img3.jpeg" alt="Pulizia cestello lavatrice">
+    </div>
+    <div class="step-text-cell">
+      <div class="step-kicker"><span class="step-num">Passo 3</span><span class="step-label">Pulizia cestello</span></div>
+      <p class="step-body">Eseguire un ciclo a vuoto a 90° con prodotto apposito. Al termine asciugare le guarnizioni con un panno. Accertarsi che le guarnizioni o altri componenti non siano danneggiati.</p>
+    </div>
+  </div>
+
+  <div class="attn-row">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p class="attn-text"><strong>Attenzione:</strong> questa manutenzione deve essere effettuata in linea generale ogni 2–3 mesi. Si raccomanda tuttavia di eseguirla prima del trasporto verso il deposito, in quanto la lavatrice rimarrà inutilizzata per diversi mesi — questo eviterà lo sviluppo di cattivi odori e muffe.</p>
+  </div>
+
+  <div class="section-bar dark">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+    <h2>Stoccaggio</h2>
+  </div>
+
+  <div class="storage-layout">
+    <div class="storage-left">
+      <img src="assets/scheda2-img4.jpeg" alt="Stoccaggio lavatrice su pallet">
+    </div>
+    <div class="storage-right">
+      <div class="storage-sub">
+        <div class="storage-sub-header"><span class="step-num">Passo 1</span><p class="storage-step-title">Posizionamento</p></div>
+        <p class="storage-step-body">La lavatrice deve essere posizionata sopra un pallet in maniera stabile e in posizione verticale.</p>
+      </div>
+      <div class="storage-sub">
+        <div class="storage-sub-header"><span class="step-num">Passo 2</span><p class="storage-step-title">Fissaggio</p></div>
+        <p class="storage-step-body">Il prodotto deve essere avvolto e bloccato al pallet con nastro di carta per garantirne la sicurezza durante il trasporto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="danger-block">
+    <p class="danger-title">⚠ Importante</p>
+    <p class="danger-text">NON CAPOVOLGERE MAI LA LAVATRICE</p>
+  </div>
+
+  <div class="scheda-footer">
+    <span>Elettrodomestici · Scheda 2</span>
+    <span>Lavatrice</span>
+  </div>
+
+</div>
+</body>
+</html>

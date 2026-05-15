@@ -84,7 +84,8 @@ const balanceScript = `<script>
 (function(){
   const params = new URLSearchParams(window.location.search);
   const attempt = Number(params.get('balanceAttempt') || '0');
-  const notePages = Math.max(1, Math.min(8, Number(params.get('notes') || '1')));
+  const targetPages = 32;
+  const notePages = Math.max(0, Math.min(8, Number(params.get('notes') || '0')));
 
   function notePage(index, total) {
     return '<section class="note-page">' +
@@ -109,9 +110,9 @@ const balanceScript = `<script>
     },
     after: function(flow) {
       const total = flow && flow.total ? flow.total : document.querySelectorAll('.pagedjs_page').length;
-      const remainder = total % 4;
-      if (remainder !== 0 && attempt < 3) {
-        params.set('notes', String(notePages + (4 - remainder)));
+      const missingPages = targetPages - total;
+      if (missingPages > 0 && attempt < 3) {
+        params.set('notes', String(notePages + missingPages));
         params.set('balanceAttempt', String(attempt + 1));
         window.location.replace(window.location.pathname + '?' + params.toString() + window.location.hash);
       }

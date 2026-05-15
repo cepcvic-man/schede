@@ -1,6 +1,7 @@
 # Work files and generation inputs
 .claude/
 PDF/
+elettrodomestici_pdf/
 imgs_*/
 preview_*.png
 tools/
