@@ -64,6 +64,7 @@ h1{font-family:'Barlow Condensed',sans-serif;font-size:46px;line-height:.96;font
 .section-title{font-family:'Barlow Condensed',sans-serif;font-size:30px;line-height:1;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-deep);margin-bottom:14px}
 .home-primary-section{background:#fff;border:1px solid #e0e5e7;border-radius:8px;padding:16px;display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:16px;align-items:center;box-shadow:0 4px 16px rgba(16,41,65,.08);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .home-primary-section:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,41,65,.12);border-color:rgba(46,109,164,.42)}
+.category-stack{display:grid;gap:12px}
 .category-icon{width:68px;aspect-ratio:1;border-radius:8px;display:grid;place-items:center;background:#e8f3f2;color:var(--teal)}
 .home-primary-section .category-icon{background:linear-gradient(145deg,var(--teal),#087274);color:#fff}
 .category-icon.blue{background:#eaf1f7;color:#2E6DA4}.category-icon.violet{background:#eee7fb;color:#5b4b93}.category-icon.green{background:#e8f3f2;color:#347d7a}.category-icon.gold{background:#fbf2e1;color:#b87915}
@@ -188,9 +189,9 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
           <h1 id="home-title">Manuale operativo CEPC</h1>
           <p class="hero-copy">Consulta rapidamente schede, procedure e indicazioni operative di reparto.</p>
           <div class="home-status-strip">
-            <span class="status-pill available"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64z"/></svg><span><span id="hero-count">24</span> schede pulizia</span></span>
-            <span class="status-pill available"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm64 96h192c17.7 0 32 14.3 32 32v64H96v-64c0-17.7 14.3-32 32-32zm96 352a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"/></svg><span>6 schede elettrodomestici</span></span>
-            <span class="status-pill">Aggiornato Aprile 2026</span>
+            <span class="status-pill available"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64z"/></svg><span><span id="total-count">61</span> schede totali</span></span>
+            <span class="status-pill available"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M48 80c0-26.5 21.5-48 48-48h256c26.5 0 48 21.5 48 48v48H48V80zm0 96h352v256c0 26.5-21.5 48-48 48H96c-26.5 0-48-21.5-48-48V176zm80 64v48h192v-48H128zm0 96v48h128v-48H128z"/></svg><span><span id="category-total">7</span> macro categorie</span></span>
+            <span class="status-pill">Aggiornato Maggio 2026</span>
           </div>
         </div>
         <div class="hero-symbol" aria-hidden="true"><svg viewBox="0 0 576 512"><path d="M249.6 11.7c15.4-14.6 39.4-14.6 54.8 0 54.6 51.7 132.6 52.9 206.9 52.3 18-.2 33.5 12.2 37.4 29.8C565 167.2 553.5 244.6 515.6 311.7c-38 67.2-98.7 119.5-185.3 154.3l-26.7 10.7c-10 4-21.2 4-31.2 0L245.7 466C159.1 431.2 98.4 378.9 60.4 311.7 22.5 244.6 11 167.2 27.3 93.8 31.2 76.2 46.7 63.8 64.7 64c74.3.6 152.3-.6 206.9-52.3zM192 176c-17.7 0-32 14.3-32 32v128c0 17.7 14.3 32 32 32h192c17.7 0 32-14.3 32-32V208c0-17.7-14.3-32-32-32H192zm32 48h128v32H224v-32zm0 64h128v32H224v-32z"/></svg></div>
@@ -206,33 +207,50 @@ iframe{width:100%;height:760px;border:0;background:#fff;border-radius:0;display:
           </div>
           <div class="search-results" id="search-results" aria-live="polite"></div>
           <h2 class="section-title" id="sections-title">Sezioni del manuale</h2>
-          <article class="home-primary-section">
-            <div class="category-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M176 24c0-13.3 10.7-24 24-24h112c13.3 0 24 10.7 24 24v40h64c26.5 0 48 21.5 48 48v112H64V112c0-26.5 21.5-48 48-48h64V24zm48 40h64V48h-64v16zM64 256h384v208c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V256zm255.7 38.3c-7.6-3.8-16.8-2.3-22.8 3.7l-84 84-31.4-31.4c-7.8-7.8-20.5-7.8-28.3 0s-7.8 20.5 0 28.3l45.6 45.6c7.8 7.8 20.5 7.8 28.3 0l98.1-98.1c6-6 7.5-15.2 3.7-22.8-1.9-3.8-5.1-7-9.2-9.3z"/></svg></div>
-            <div class="section-copy">
-              <h3>Pulizia</h3>
-              <div class="sheet-total"><span id="category-count">24</span> schede disponibili</div>
-              <p>Prodotti, procedure, stoccaggio e norme di sicurezza per le attivita di pulizia.</p>
-              <a href="Manuale%20operativo%20CEPC%20-%20Pulizia.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> Scarica manuale PDF</a>
-            </div>
-            <button class="card-button" id="open-cleaning" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
-          </article>
-          <article class="home-primary-section" style="margin-top:12px">
-            <div class="category-icon blue"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm64 96h192c17.7 0 32 14.3 32 32v64H96v-64c0-17.7 14.3-32 32-32zm96 352a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"/></svg></div>
-            <div class="section-copy">
-              <h3>Elettrodomestici</h3>
-              <div class="sheet-total"><span id="elettro-count">6</span> schede disponibili</div>
-              <p>Gestione, pulizia e stoccaggio degli elettrodomestici in dotazione.</p>
-              <a href="Manuale%20operativo%20CEPC%20-%20Elettrodomestici.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> Scarica manuale PDF</a>
-            </div>
-            <button class="card-button" id="open-elettrodomestici" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
-          </article>
+          <div class="category-stack">
+            <article class="home-primary-section">
+              <div class="category-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M176 24c0-13.3 10.7-24 24-24h112c13.3 0 24 10.7 24 24v40h64c26.5 0 48 21.5 48 48v112H64V112c0-26.5 21.5-48 48-48h64V24zm48 40h64V48h-64v16zM64 256h384v208c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V256zm255.7 38.3c-7.6-3.8-16.8-2.3-22.8 3.7l-84 84-31.4-31.4c-7.8-7.8-20.5-7.8-28.3 0s-7.8 20.5 0 28.3l45.6 45.6c7.8 7.8 20.5 7.8 28.3 0l98.1-98.1c6-6 7.5-15.2 3.7-22.8-1.9-3.8-5.1-7-9.2-9.3z"/></svg></div>
+              <div class="section-copy"><h3>Pulizia</h3><div class="sheet-total"><span data-category-count="pulizia">24</span> schede disponibili</div><p>Prodotti, procedure, stoccaggio e norme di sicurezza per le attivita di pulizia.</p><a href="Manuale%20operativo%20CEPC%20-%20Pulizia.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64z"/></svg> Scarica manuale PDF</a></div>
+              <button class="card-button" id="open-cleaning" data-open-category="pulizia" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon blue"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm64 96h192c17.7 0 32 14.3 32 32v64H96v-64c0-17.7 14.3-32 32-32zm96 352a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"/></svg></div>
+              <div class="section-copy"><h3>Elettrodomestici</h3><div class="sheet-total"><span data-category-count="elettrodomestici">6</span> schede disponibili</div><p>Gestione, pulizia e stoccaggio degli elettrodomestici in dotazione.</p><a href="Manuale%20operativo%20CEPC%20-%20Elettrodomestici.pdf" download class="pdf-dl-link"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64z"/></svg> Scarica manuale PDF</a></div>
+              <button class="card-button" id="open-elettrodomestici" data-open-category="elettrodomestici" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon green"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M48 0C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h32c0 53 43 96 96 96s96-43 96-96h96c0 53 43 96 96 96s96-43 96-96h32c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480V48c0-26.5-21.5-48-48-48H48zm432 240h112v128h-32c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H272c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H48V48h384v208c0 17.7 14.3 32 32 32h16v-48z"/></svg></div>
+              <div class="section-copy"><h3>Attrezzature tecniche</h3><div class="sheet-total"><span data-category-count="attrezzature">7</span> schede disponibili</div><p>Pompe, transpallet, ventilatori, prolunghe e attrezzature operative.</p></div>
+              <button class="card-button" data-open-category="attrezzature" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon gold"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M248 0h80c13.3 0 24 10.7 24 24v80h96c17.7 0 32 14.3 32 32v112h48c26.5 0 48 21.5 48 48v168c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V296c0-26.5 21.5-48 48-48h48V136c0-17.7 14.3-32 32-32h96V24c0-13.3 10.7-24 24-24zm0 104h80V48h-80v56zM144 152v96h112v-96H144zm176 0v96h112v-96H320zM48 296v168h208V296H48zm272 0v168h208V296H320z"/></svg></div>
+              <div class="section-copy"><h3>Sicurezza e primo soccorso</h3><div class="sheet-total"><span data-category-count="sicurezza">6</span> schede disponibili</div><p>DPI, presidi di primo soccorso, coni e supporti per emergenza.</p></div>
+              <button class="card-button" data-open-category="sicurezza" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon violet"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M352 320c88.4 0 160-71.6 160-160 0-15.3-2.2-30.1-6.2-44.2-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8-57.9-57.9 76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C404.1 24.2 389.3 22 374 22c-88.4 0-160 71.6-160 160 0 20.2 3.8 39.6 10.6 57.5L23 441c-30.7 30.7-30.7 80.5 0 111.2s80.5 30.7 111.2 0l201.5-201.5c17.9 6.8 37.3 10.6 57.5 10.6z"/></svg></div>
+              <div class="section-copy"><h3>Arredi e servizi</h3><div class="sheet-total"><span data-category-count="arredi">12</span> schede disponibili</div><p>Arredi, sanitari mobili, specchi, gazebo e materiali di servizio.</p></div>
+              <button class="card-button" data-open-category="arredi" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon blue"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0h256c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V32C32 14.3 46.3 0 64 0zm48 96v320h160V96H112z"/></svg></div>
+              <div class="section-copy"><h3>Tessili e palco</h3><div class="sheet-total"><span data-category-count="tessili">4</span> schede disponibili</div><p>Moquette, tende palco e teli fonoassorbenti.</p></div>
+              <button class="card-button" data-open-category="tessili" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+            <article class="home-primary-section">
+              <div class="category-icon green"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M50.7 58.5C58.4 42.3 74.8 32 92.7 32H355.3c17.9 0 34.3 10.3 42 26.5L448 165.3V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V165.3L50.7 58.5zM64 192v272h320V192H64zm32-64h256L329.3 80H118.7L96 128z"/></svg></div>
+              <div class="section-copy"><h3>Consumabili e accessori</h3><div class="sheet-total"><span data-category-count="consumabili">2</span> schede disponibili</div><p>Make-up, porta distintivi e accessori inventariabili.</p></div>
+              <button class="card-button" data-open-category="consumabili" type="button">Apri sezione <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+            </article>
+          </div>
         </section>
         <aside class="home-side" aria-labelledby="future-title">
-          <h2 id="future-title">In preparazione</h2>
+          <h2 id="future-title">Archivio</h2>
           <div class="future-list">
-            <article class="future-item"><div class="future-icon category-icon violet"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M352 320c88.4 0 160-71.6 160-160 0-15.3-2.2-30.1-6.2-44.2-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8-57.9-57.9 76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C404.1 24.2 389.3 22 374 22c-88.4 0-160 71.6-160 160 0 20.2 3.8 39.6 10.6 57.5L23 441c-30.7 30.7-30.7 80.5 0 111.2s80.5 30.7 111.2 0l201.5-201.5c17.9 6.8 37.3 10.6 57.5 10.6z"/></svg></div><div><h3>Ferramenta</h3><span>Uso e stoccaggio utensili.</span></div></article>
-            <article class="future-item"><div class="future-icon category-icon green"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M48 0C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h32c0 53 43 96 96 96s96-43 96-96h96c0 53 43 96 96 96s96-43 96-96h32c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480V48c0-26.5-21.5-48-48-48H48zm432 240h112v128h-32c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H272c-17.7-32.9-52.5-56-96-56s-78.3 23.1-96 56H48V48h384v208c0 17.7 14.3 32 32 32h16v-48z"/></svg></div><div><h3>Attrezzature</h3><span>Uso e manutenzione macchinari.</span></div></article>
-            <article class="future-item"><div class="future-icon category-icon gold"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M248 0h80c13.3 0 24 10.7 24 24v80h96c17.7 0 32 14.3 32 32v112h48c26.5 0 48 21.5 48 48v168c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V296c0-26.5 21.5-48 48-48h48V136c0-17.7 14.3-32 32-32h96V24c0-13.3 10.7-24 24-24zm0 104h80V48h-80v56zM144 152v96h112v-96H144zm176 0v96h112v-96H320zM48 296v168h208V296H48zm272 0v168h208V296H320z"/></svg></div><div><h3>Materiali</h3><span>Gestione materiali di consumo.</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon green"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64z"/></svg></div><div><h3>31 nuove schede</h3><span>Organizzate dai PDF in nuovi.</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon gold"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M48 80c0-26.5 21.5-48 48-48h256c26.5 0 48 21.5 48 48v48H48V80zm0 96h352v256c0 26.5-21.5 48-48 48H96c-26.5 0-48-21.5-48-48V176zm80 64v48h192v-48H128zm0 96v48h128v-48H128z"/></svg></div><div><h3>5 macro nuove</h3><span>Attrezzature, sicurezza, arredi, tessili, accessori.</span></div></article>
+            <article class="future-item"><div class="future-icon category-icon violet"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 96c0-17.7 14.3-32 32-32h320c17.7 0 32 14.3 32 32v320c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96zm64 64v64h256v-64H128zm0 112v64h256v-64H128z"/></svg></div><div><h3>Formato uniforme</h3><span>Sezioni operative con immagini native.</span></div></article>
           </div>
         </aside>
       </div>
@@ -301,6 +319,62 @@ const categories = {
       {number:5,title:'Misuratore di Pressione',file:'elettrodomestici/scheda5.html'},
       {number:6,title:'Scalda Biberon',file:'elettrodomestici/scheda6.html'}
     ]
+  },
+  attrezzature: {
+    label: 'Attrezzature tecniche',
+    sheets: [
+      {number:1,title:'Bicicletta',file:'attrezzature/scheda1.html'},
+      {number:2,title:'Filtro Pompa Piscina',file:'attrezzature/scheda2.html'},
+      {number:3,title:'Megafono',file:'attrezzature/scheda3.html'},
+      {number:4,title:'Pompa a Immersione per Svuotamento',file:'attrezzature/scheda4.html'},
+      {number:5,title:'Prolunghe e Ciabatte Elettriche',file:'attrezzature/scheda5.html'},
+      {number:6,title:'Transpallet Manuale',file:'attrezzature/scheda6.html'},
+      {number:7,title:'Ventilatori',file:'attrezzature/scheda7.html'}
+    ]
+  },
+  sicurezza: {
+    label: 'Sicurezza e primo soccorso',
+    sheets: [
+      {number:1,title:'Prodotti di Consumo Primo Soccorso',file:'sicurezza/scheda1.html'},
+      {number:2,title:'Sedia a Rotelle',file:'sicurezza/scheda2.html'},
+      {number:3,title:'DPI: Gilet',file:'sicurezza/scheda3.html'},
+      {number:4,title:'DPI: Caschi di Protezione',file:'sicurezza/scheda4.html'},
+      {number:5,title:'Coni Stradali',file:'sicurezza/scheda5.html'},
+      {number:6,title:'Letti Primo Soccorso',file:'sicurezza/scheda6.html'}
+    ]
+  },
+  arredi: {
+    label: 'Arredi e servizi',
+    sheets: [
+      {number:1,title:'Pannelli Box Doccia',file:'arredi/scheda1.html'},
+      {number:2,title:'Appendiabiti',file:'arredi/scheda2.html'},
+      {number:3,title:'Grucce',file:'arredi/scheda3.html'},
+      {number:4,title:'Gazebo',file:'arredi/scheda4.html'},
+      {number:5,title:'Mobiletti',file:'arredi/scheda5.html'},
+      {number:6,title:'Leggio',file:'arredi/scheda6.html'},
+      {number:7,title:'Scrivania',file:'arredi/scheda7.html'},
+      {number:8,title:'Specchi',file:'arredi/scheda8.html'},
+      {number:9,title:'Fasciatoio',file:'arredi/scheda9.html'},
+      {number:10,title:'Vaschetta Bagnetto',file:'arredi/scheda10.html'},
+      {number:11,title:'Cuscini',file:'arredi/scheda11.html'},
+      {number:12,title:'Lavabo in Acciaio e Plastica',file:'arredi/scheda12.html'}
+    ]
+  },
+  tessili: {
+    label: 'Tessili e palco',
+    sheets: [
+      {number:1,title:'Moquette Palco',file:'tessili/scheda1.html'},
+      {number:2,title:'Moquette Extra',file:'tessili/scheda2.html'},
+      {number:3,title:'Tende per Palco',file:'tessili/scheda3.html'},
+      {number:4,title:'Telo Fonoassorbente',file:'tessili/scheda4.html'}
+    ]
+  },
+  consumabili: {
+    label: 'Consumabili e accessori',
+    sheets: [
+      {number:1,title:'Make-up',file:'consumabili/scheda1.html'},
+      {number:2,title:'Porta Distintivi',file:'consumabili/scheda2.html'}
+    ]
   }
 };
 
@@ -314,9 +388,8 @@ const viewer = document.getElementById('viewer');
 const heading = document.getElementById('viewer-heading');
 const kicker = document.getElementById('viewer-kicker');
 const printButton = document.getElementById('print-button');
-const heroCount = document.getElementById('hero-count');
-const categoryCount = document.getElementById('category-count');
-const elettroCount = document.getElementById('elettro-count');
+const totalCount = document.getElementById('total-count');
+const categoryTotal = document.getElementById('category-total');
 const panelCategory = document.getElementById('panel-category');
 const menuToggle = document.getElementById('menu-toggle');
 const backdrop = document.getElementById('backdrop');
@@ -326,9 +399,13 @@ const contextTitle = document.getElementById('context-title');
 let activeNumber = categories.pulizia.sheets[0].number;
 let frameObserver;
 
-heroCount.textContent = categories.pulizia.sheets.length;
-categoryCount.textContent = categories.pulizia.sheets.length;
-if (elettroCount) elettroCount.textContent = categories.elettrodomestici.sheets.length;
+const totalSheets = Object.values(categories).reduce((sum, category) => sum + category.sheets.length, 0);
+if (totalCount) totalCount.textContent = totalSheets;
+if (categoryTotal) categoryTotal.textContent = Object.keys(categories).length;
+document.querySelectorAll('[data-category-count]').forEach(counter => {
+  const category = categories[counter.dataset.categoryCount];
+  if (category) counter.textContent = category.sheets.length;
+});
 
 function setActiveNav(mode) {
   document.querySelectorAll('.nav-button').forEach(button => button.classList.remove('active'));
@@ -531,8 +608,9 @@ document.getElementById('categories-nav').addEventListener('click', () => {
   showHome();
   setTimeout(() => document.getElementById('sections-title').scrollIntoView({behavior:'smooth',block:'start'}), 80);
 });
-document.getElementById('open-cleaning').addEventListener('click', () => openCategory('pulizia'));
-document.getElementById('open-elettrodomestici').addEventListener('click', () => openCategory('elettrodomestici'));
+document.querySelectorAll('[data-open-category]').forEach(button => {
+  button.addEventListener('click', () => openCategory(button.dataset.openCategory));
+});
 function enhanceFrameControls() {
   try {
     const doc = viewer.contentDocument || viewer.contentWindow.document;
